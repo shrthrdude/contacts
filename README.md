@@ -1,2 +1,0 @@
-# contacts
-Easy contacts management
