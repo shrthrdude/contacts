@@ -36,6 +36,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
     };
 
     $scope.deleteContact = function(id) {
+        // add warning
         contactService.deleteContact(id).then(function(res) {
             $scope.getContacts();
         }); 
@@ -64,7 +65,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
 
     $scope.gridOptions = { 
         data: 'contacts',
-        rowTemplate:'<div style="height: 100%" ng-class="{closedRowColor: row.getProperty(\'status\') === \'Closed\'}"><div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell ">' +
+        rowTemplate:'<div style="height: 100%"><div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell ">' +
                            '<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }"></div>' +
                            '<div ng-cell></div>' +
                      '</div></div>',
@@ -80,13 +81,13 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
             };
         },
         height: '200px',
-        sortInfo: {fields: ['Contact Type', 'Last Name', 'First Name', 'City', 'State'], directions: ['asc']},
+        sortInfo: {fields: ['Last Name', 'First Name', 'City', 'State', 'Contact Type'], directions: ['asc']},
         columnDefs: [
-            {field: 'contactType', displayName: 'Contact Type'},
             {field: 'last', displayName: 'Last Name'},
             {field: 'first', displayName: 'First Name'},
             {field: 'city', displayName: 'City'},
             {field: 'state', displayName: 'State'},
+            {field: 'contactType', displayName: 'Contact Type'},
             {field: 'title', visible: false},
             {field: 'firstAddr', visible: false},
             {field: 'secondAddr', visible: false},
@@ -101,6 +102,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
             {field: 'comment', visible: false},
             {field: 'linkedin', visible: false},
             {field: 'facebook', visible: false},
-            {field: 'twitter', visible: false}        ]
+            {field: 'twitter', visible: false},
+        ]
     };
 });

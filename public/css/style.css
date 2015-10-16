@@ -2,7 +2,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: #333;
+	color: #3949ab;
 	background-color: #eee;
 	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 }
@@ -239,6 +239,10 @@ p {
     top: 0;
   }
 }*/
+
+.ilb {
+	display: inline-block;
+}
 
 .icon-block {
   padding: 0 15px;

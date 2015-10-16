@@ -5,219 +5,222 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
   <a style="float: right; color: white;" href="/logout" class="btn btn-default btn-sm indigo btnMargin">Logout</a>
   <div class="row">
-        <h1 class="padIt blue-text accent-4"><em>Hello, {{user.username}}</em></h1>
-        <!-- Modal Trigger -->
-        <a style="float: right;" data-target="modal3" class="btn-floating updateProf-trigger indigo btnMargin"><i class="material-icons">add</i></a>
-        <div class="input-field col s4">
-          <i class="material-icons prefix">search</i>
-          <input type="text" autofocus ng-model="filterOptions.filterText"/>
-          <label class="active" for="filterText">Search</label>
-        </div>
-        <div id="modal3" class="modal">         
-          <div class="modal-content">
-            <div class="row">
-              <button style="float: right" type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4>Create New Contact</h4>
-                <div class="input-field col s12">
-                  <input id="contactType" type="text" ng-model="newContact.contactType" class="validate">
-                  <label class="active" for="contactType">Contact Type</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="title" type="text" ng-model="newContact.title" class="validate">
-                  <label class="active" for="title">Title</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="first" type="text" ng-model="newContact.first" class="validate">
-                  <label class="active" for="first">First Name</label>
-                </div>
-                <div class="input-field col s12" style="padding-right: 10%;">
-                  <input id="last" type="text" class="validate" ng-model="newContact.last" name="last" required>
-                  <label class="active" for="last">Last Name</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="firstAddr" type="text" ng-model="newContact.firstAddr" class="validate">
-                  <label class="active" for="firstAddr">First Address</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="secondAddr" type="text" ng-model="newContact.secondAddr" class="validate">
-                  <label class="active" for="secondAddr">Second Address</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="city" type="text" ng-model="newContact.city" class="validate">
-                  <label class="active" for="city">City</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="state" type="text" ng-model="newContact.state" class="validate">
-                  <label class="active" for="state">State/Province</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="postal" type="text" ng-model="newContact.postal" class="validate">
-                  <label class="active" for="postal">Postal Code</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="country" type="text" ng-model="newContact.country"  class="validate">
-                  <label class="active" for="country">Country</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="homePhone" type="text" ng-model="newContact.homePhone" class="validate">
-                  <label class="active" for="homephone">Home Phone</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="mobilePhone" type="text" ng-model="newContact.mobilePhone" class="validate">
-                  <label class="active" for="mobilePhone">Mobile Phone</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="workPhone" type="text" ng-model="newContact.workPhone" class="validate">
-                  <label class="active" for="workPhone">Work Phone</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="workExt" type="text" ng-model="newContact.workExt" class="validate">
-                  <label class="active" for="workExt">Work Extension</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="firstEmail" type="text" ng-model="newContact.firstEmail" class="validate">
-                  <label class="active" for="firstEmail">First Email</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="secondEmail" type="text" ng-model="newContact.secondEmail" class="validate">
-                  <label class="active" for="secondEmail">Second Email</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="company" type="text" ng-model="newContact.company" class="validate">
-                  <label class="active" for="company">Company</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="comment" type="text" ng-model="newContact.comment" class="validate">
-                  <label class="active" for="comment">Comment</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="linkedin" type="text" ng-model="newContact.linkedin" class="validate">
-                  <label class="active" for="linkedin">LinkedIn</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="facebook" type="text" ng-model="newContact.facebook" class="validate">
-                  <label class="active" for="facebook">Facebook</label>
-                </div>
-                <div class="input-field col s12">
-                  <input id="twitter" type="text" ng-model="newContact.twitter" class="validate">
-                  <label class="active" for="twitter">Twitter</label>
-                </div>
-            </div>
-            <button class="modal-close btn waves-effect indigo" type="submit" ng-click="createNewContact(newContact)">Save
-            </button>
+    <h1 class="padIt blue-text accent-4"><em>Hello, {{user.username}}</em></h1>
+    
+    <!-- Modal Trigger -->
+    <a style="float: right;" data-target="modal3" class="btn-floating updateProf-trigger indigo btnMargin"><i class="material-icons">add</i></a>
+
+    <div class="input-field col s4">
+      <i class="material-icons prefix">search</i>
+      <input type="text" autofocus ng-model="filterOptions.filterText"/>
+      <label class="active" for="filterText">Search</label>
+    </div>
+
+    <div id="modal3" class="modal modal-fixed-footer">         
+      <div class="modal-content">
+        <div class="row">
+          <button style="float: right" type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>Create New Contact</h4>
+          <div class="input-field col s12">
+            <input id="contactType" type="text" ng-model="newContact.contactType" class="validate">
+            <label class="active" for="contactType">Contact Type</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="title" type="text" ng-model="newContact.title" class="validate">
+            <label class="active" for="title">Title</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="first" type="text" ng-model="newContact.first" class="validate">
+            <label class="active" for="first">First Name</label>
+          </div>
+          <div class="input-field col s12" style="padding-right: 10%;">
+            <input id="last" type="text" class="validate" ng-model="newContact.last" name="last" required>
+            <label class="active" for="last">Last Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="firstAddr" type="text" ng-model="newContact.firstAddr" class="validate">
+            <label class="active" for="firstAddr">First Address</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="secondAddr" type="text" ng-model="newContact.secondAddr" class="validate">
+            <label class="active" for="secondAddr">Second Address</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="city" type="text" ng-model="newContact.city" class="validate">
+            <label class="active" for="city">City</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="state" type="text" ng-model="newContact.state" class="validate">
+            <label class="active" for="state">State/Province</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="postal" type="text" ng-model="newContact.postal" class="validate">
+            <label class="active" for="postal">Postal Code</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="country" type="text" ng-model="newContact.country"  class="validate">
+            <label class="active" for="country">Country</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="homePhone" type="text" ng-model="newContact.homePhone" class="validate">
+            <label class="active" for="homephone">Home Phone</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="mobilePhone" type="text" ng-model="newContact.mobilePhone" class="validate">
+            <label class="active" for="mobilePhone">Mobile Phone</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="workPhone" type="text" ng-model="newContact.workPhone" class="validate">
+            <label class="active" for="workPhone">Work Phone</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="workExt" type="text" ng-model="newContact.workExt" class="validate">
+            <label class="active" for="workExt">Work Extension</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="firstEmail" type="text" ng-model="newContact.firstEmail" class="validate">
+            <label class="active" for="firstEmail">First Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="secondEmail" type="text" ng-model="newContact.secondEmail" class="validate">
+            <label class="active" for="secondEmail">Second Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="company" type="text" ng-model="newContact.company" class="validate">
+            <label class="active" for="company">Company</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="comment" type="text" ng-model="newContact.comment" class="validate">
+            <label class="active" for="comment">Comment</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="linkedin" type="text" ng-model="newContact.linkedin" class="validate">
+            <label class="active" for="linkedin">LinkedIn</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="facebook" type="text" ng-model="newContact.facebook" class="validate">
+            <label class="active" for="facebook">Facebook</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="twitter" type="text" ng-model="newContact.twitter" class="validate">
+            <label class="active" for="twitter">Twitter</label>
           </div>
         </div>
       </div>
+      <div class="modal-footer">
+        <button class="modal-close btn waves-effect indigo" type="submit" ng-click="createNewContact(newContact)">Save
+        </button>
+      </div>
+    </div>
+  </div>
 
        
-
-       <div class="col s8">
-          <p class="gridStyle" ng-grid="gridOptions"></p>
-
-          <div id="modal4" style="min-width: 800px; max-width: 1200px" class="modal">         
-            <div class="modal-content">
-              <div class="row">
-                <div id="contactDetails">
-                  <div class="modal-header">
-                    <button style="float: right" type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h2 class="modal-title">Contact Details</h2>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="contactType" type="text" ng-model="contact.contactType" value={{contact.contactType}} class="validate">
-                    <label class="active" for="contactType">Contact Type</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="title" type="text" ng-model="contact.title" value={{contact.title}} class="validate">
-                    <label class="active" for="title">Title</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="first" type="text" ng-model="contact.first" value={{contact.first}} class="validate">
-                    <label class="active" for="first">First Name</label>
-                  </div>
-                  <div class="input-field col s12" style="padding-right: 10%;">
-                    <input id="last" type="text" class="validate" ng-model="contact.last" value={{contact.last}} name="last" required>
-                    <label class="active" for="last">Last Name</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="firstAddr" type="text" ng-model="contact.firstAddr" value={{contact.firstAddr}} class="validate">
-                    <label class="active" for="firstAddr">First Address</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="secondAddr" type="text" ng-model="contact.secondAddr" value={{contact.secondAddr}} class="validate">
-                    <label class="active" for="secondAddr">Second Address</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="city" type="text" ng-model="contact.city" value={{contat.city}} class="validate">
-                    <label class="active" for="city">City</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="state" type="text" ng-model="contact.state" value={{contact.state}} class="validate">
-                    <label class="active" for="state">State/Province</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="postal" type="text" ng-model="contact.postal" value={{contact.postal}} class="validate">
-                    <label class="active" for="postal">Postal Code</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="country" type="text" ng-model="contact.country" value={{contact.country}} class="validate">
-                    <label class="active" for="country">Country</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="homePhone" type="text" ng-model="contact.homePhone" value={{contact.homePhone}} class="validate">
-                    <label class="active" for="homephone">Home Phone</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="mobilePhone" type="text" ng-model="contact.mobilePhone" value={{contact.mobilePhone}} class="validate">
-                    <label class="active" for="mobilePhone">Mobile Phone</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="workPhone" type="text" ng-model="contact.workPhone" value={{contact.workPhone}} class="validate">
-                    <label class="active" for="workPhone">Work Phone</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="workExt" type="text" ng-model="contact.workExt" value={{contact.workExt}} class="validate">
-                    <label class="active" for="workExt">Work Extension</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="firstEmail" type="text" ng-model="contact.firstEmail" value={{contact.firstEmail}} class="validate">
-                    <label class="active" for="firstEmail">First Email</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="secondEmail" type="text" ng-model="contact.secondEmail" value={{contact.secondEmail}} class="validate">
-                    <label class="active" for="secondEmail">Second Email</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="company" type="text" ng-model="contact.company" value={{contact.company}} class="validate">
-                    <label class="active" for="company">Company</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="comment" type="text" ng-model="contact.comment" value={{contact.comment}} class="validate">
-                    <label class="active" for="comment">Comment</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="linkedin" type="text" ng-model="contact.linkedin" value={{contact.linkedin}} class="validate">
-                    <label class="active" for="linkedin">LinkedIn</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="facebook" type="text" ng-model="contact.facebook" value={{contact.facebook}} class="validate">
-                    <label class="active" for="facebook">Facebook</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="twitter" type="text" ng-model="contact.twitter" value={{contact.twitter}} class="validate">
-                    <label class="active" for="twitter">Twitter</label>
-                  </div>
-                </div>
-              <div class="row">
-                <button class="modal-close btn waves-effect indigo" type="submit" ng-click="updateContact(contact)">Save
-                </button>
-                <button class="modal-close btn waves-effect indigo" type="submit" ng-click="deleteContact(contact._id)">Delete
-                </button>
+    <div class="col s8">
+      <p class="gridStyle" ng-grid="gridOptions"></p>
+      <div id="modal4" style="min-width: 800px; max-width: 1200px" class="modal modal-fixed-footer">       
+        <div class="modal-content">
+          <div class="row">
+            <div class="modal-header">
+              <button style="float: right" type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title">Contact Details</h2>
+            </div>  
+            <div id="contactDetails">
+              <div class="input-field col s12">
+                <input id="contactType" type="text" ng-model="contact.contactType" value={{contact.contactType}} class="validate">
+                <label class="active" for="contactType">Contact Type</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="title" type="text" ng-model="contact.title" value={{contact.title}} class="validate">
+                <label class="active" for="title">Title</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="first" type="text" ng-model="contact.first" value={{contact.first}} class="validate">
+                <label class="active" for="first">First Name</label>
+              </div>
+              <div class="input-field col s12" style="padding-right: 10%;">
+                <input id="last" type="text" class="validate" ng-model="contact.last" value={{contact.last}} name="last" required>
+                <label class="active" for="last">Last Name</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="firstAddr" type="text" ng-model="contact.firstAddr" value={{contact.firstAddr}} class="validate">
+                <label class="active" for="firstAddr">First Address</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="secondAddr" type="text" ng-model="contact.secondAddr" value={{contact.secondAddr}} class="validate">
+                <label class="active" for="secondAddr">Second Address</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="city" type="text" ng-model="contact.city" value={{contat.city}} class="validate">
+                <label class="active" for="city">City</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="state" type="text" ng-model="contact.state" value={{contact.state}} class="validate">
+                <label class="active" for="state">State/Province</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="postal" type="text" ng-model="contact.postal" value={{contact.postal}} class="validate">
+                <label class="active" for="postal">Postal Code</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="country" type="text" ng-model="contact.country" value={{contact.country}} class="validate">
+                <label class="active" for="country">Country</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="homePhone" type="text" ng-model="contact.homePhone" value={{contact.homePhone}} class="validate">
+                <label class="active" for="homephone">Home Phone</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="mobilePhone" type="text" ng-model="contact.mobilePhone" value={{contact.mobilePhone}} class="validate">
+                <label class="active" for="mobilePhone">Mobile Phone</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="workPhone" type="text" ng-model="contact.workPhone" value={{contact.workPhone}} class="validate">
+                <label class="active" for="workPhone">Work Phone</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="workExt" type="text" ng-model="contact.workExt" value={{contact.workExt}} class="validate">
+                <label class="active" for="workExt">Work Extension</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="firstEmail" type="text" ng-model="contact.firstEmail" value={{contact.firstEmail}} class="validate">
+                <label class="active" for="firstEmail">First Email</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="secondEmail" type="text" ng-model="contact.secondEmail" value={{contact.secondEmail}} class="validate">
+                <label class="active" for="secondEmail">Second Email</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="company" type="text" ng-model="contact.company" value={{contact.company}} class="validate">
+                <label class="active" for="company">Company</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="comment" type="text" ng-model="contact.comment" value={{contact.comment}} class="validate">
+                <label class="active" for="comment">Comment</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="linkedin" type="text" ng-model="contact.linkedin" value={{contact.linkedin}} class="validate">
+                <label class="active" for="linkedin">LinkedIn</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="facebook" type="text" ng-model="contact.facebook" value={{contact.facebook}} class="validate">
+                <label class="active" for="facebook">Facebook</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="twitter" type="text" ng-model="contact.twitter" value={{contact.twitter}} class="validate">
+                <label class="active" for="twitter">Twitter</label>
               </div>
             </div>
           </div>
-          <br>
-          <br>
-       </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-close btn indigo left" type="submit" ng-click="updateContact(contact)">Save</button>
+          <button class="modal-close btn indigo" type="submit">Cancel</button>
+          <button class="modal-close btn red right" type="submit" ng-click="deleteContact(contact._id)">Delete</button>
+        </div>
+      </div>
+        <br>
+        <br>
+    </div>
   </div>
   <script>
     $(document).ready(function(){
