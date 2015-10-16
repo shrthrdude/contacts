@@ -3,6 +3,11 @@ var app = angular.module("contacts");
 app.controller("dashboardCtrl", function($scope, user, dashboardService, contactService) {
 
     $scope.user = user.data; 
+
+    $scope.filterOptions = {
+        filterText: ''
+    };
+
     $scope.getdata = function(get){
         dashboardService.getTheData(get)
     };
@@ -66,6 +71,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         enableColumnResize: true,
         selectedItems: $scope.selected,
         multiSelect: false,
+        filterOptions: $scope.filterOptions,
         afterSelectionChange: function (row, event) {
             $scope.contact = $scope.selected[0];
 
@@ -80,7 +86,21 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
             {field: 'last', displayName: 'Last Name'},
             {field: 'first', displayName: 'First Name'},
             {field: 'city', displayName: 'City'},
-            {field: 'state', displayName: 'State'}
-        ]
+            {field: 'state', displayName: 'State'},
+            {field: 'title', visible: false},
+            {field: 'firstAddr', visible: false},
+            {field: 'secondAddr', visible: false},
+            {field: 'postal', visible: false},
+            {field: 'homePhone', visible: false},
+            {field: 'mobilePhone', visible: false},
+            {field: 'workPhone', visible: false},
+            {field: 'workExt', visible: false},
+            {field: 'firstEmail', visible: false},
+            {field: 'secondEmail', visible: false},
+            {field: 'company', visible: false},
+            {field: 'comment', visible: false},
+            {field: 'linkedin', visible: false},
+            {field: 'facebook', visible: false},
+            {field: 'twitter', visible: false}        ]
     };
 });

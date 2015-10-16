@@ -1,13 +1,14 @@
 var app = angular.module('contacts');
 
 app.service('mainService', function($http) {
-    this.signup = function(email, password) {
+    this.signup = function(email, password, username) {
         return $http({
             method: 'POST',
             url: '/api/user/signup',
             data: {
                 email: email, 
-                password: password
+                password: password,
+                username: username
             }
         }).then(function(dataResponse) {
             

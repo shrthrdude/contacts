@@ -3,26 +3,29 @@ var User = require('../dbModels/User');
 var mongoose = require('mongoose');
 
 module.exports = {
- create: function(req, res) {
-   var newUser = new User(req.body);
-   newUser.save( function(err, result) {
-    if (err) {
-      return res.status(500).json(err);
-    }
-     res.json(result);
-   });
- },
+  create: function(req, res) {  
+  
+  var newUser = new User(req.body);
+    newUser.save( function(err, result) {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      res.json(result);
+    });
+  },
 
- dashboard: function(req, res) {
-   user.find({}).exec().then(function(user) {
-       return res.json(user);
-     });
- },
+
+  dashboard: function(req, res) {
+    user.find({}).exec().then(function(user) {
+      return res.json(user);
+    });
+  },
  
- updateUser: function(req, res) {
-   User.findByIdAndUpdate(req.params.id, {
+  updateUser: function(req, res) {
+    User.findByIdAndUpdate(req.params.id, {
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      username: req.body.username
     })
       .exec(function(err, result) {
       if (err) {
@@ -30,6 +33,6 @@ module.exports = {
       }
       res.json(result);
     });
- }
+  }
 
 };

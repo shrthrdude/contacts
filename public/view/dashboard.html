@@ -3,12 +3,16 @@
 
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <p><a style="float: right;" href="/logout" class="btn btn-default btn-sm indigo" id="btnMargin">Logout</a></p> 
+  <a style="float: right; color: white;" href="/logout" class="btn btn-default btn-sm indigo btnMargin">Logout</a>
   <div class="row">
-      <div class="col s4">
+        <h1 class="padIt blue-text accent-4"><em>Hello, {{user.username}}</em></h1>
         <!-- Modal Trigger -->
-        <p><button data-target="modal3" class="btn updateProf-trigger indigo">Create Contact</button></p>
-      </div>
+        <a style="float: right;" data-target="modal3" class="btn-floating updateProf-trigger indigo btnMargin"><i class="material-icons">add</i></a>
+        <div class="input-field col s4">
+          <i class="material-icons prefix">search</i>
+          <input type="text" autofocus ng-model="filterOptions.filterText"/>
+          <label class="active" for="filterText">Search</label>
+        </div>
         <div id="modal3" class="modal">         
           <div class="modal-content">
             <div class="row">
@@ -108,7 +112,6 @@
        
 
        <div class="col s8">
-          <h2 class="padIt">Contact List</h2>
           <p class="gridStyle" ng-grid="gridOptions"></p>
 
           <div id="modal4" style="min-width: 800px; max-width: 1200px" class="modal">         

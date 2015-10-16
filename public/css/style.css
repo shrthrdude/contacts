@@ -81,12 +81,12 @@ Layout styles
 }
 
 .gridStyle {
-    border: 1px solid #991414;
-    width: 95%; 
+    border: 3px solid #3949ab;
+    width: 98%; 
     height: 220px;
-    color: #991414;
+    color: #3949ab;
     font-size: 12px;
-    margin: 20px;
+    margin-left: 10px;
 }
 
 .header-heading { 
@@ -204,6 +204,15 @@ p {
     box-shadow: 0 1px 0 0 #3949ab !important;
 }
 
+.input-field input[type=text]:focus + label {
+    color: #3949ab !important;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #3949ab !important;
+    box-shadow: 0 1px 0 0 #3949ab !important;
+}
+
 /*.parallax-container {
   min-height: 380px;
   line-height: 0;
@@ -250,13 +259,13 @@ p {
 	padding: 10px;
 }
 
+.btnMargin {
+	margin: 20px;
+}
+
 #contactDetailsForm {
 	border: 3px solid black;
 	padding: 10px;
-}
-
-#btnMargin {
-	margin: 20px;
 }
 
 #logo {

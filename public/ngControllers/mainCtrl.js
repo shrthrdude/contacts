@@ -9,19 +9,21 @@ app.controller("mainCtrl", function($scope, $location, mainService, dashboardSer
     
     // Register
 
-    $scope.submit = function(email, password) {
+    $scope.submit = function(email, password, username) {
         var newUser = {
             email: $scope.email,
-            password: $scope.reg_password
+            password: $scope.reg_password,
+            username: $scope.username
         };
 
-        mainService.signup(email, password).then(function(res){
+        mainService.signup(email, password, username).then(function(res){
             Materialize.toast("Account Created!", 2500, 'toast-success');
             $('#modal1').closeModal();
             $location.path("/dashboard/");
             $scope.email = '';
             $scope.reg_password = '';
             $scope.password_confirm = '';
+            $scope.username = '';
             $scope.show = true;
         })
         .catch(function(err){
