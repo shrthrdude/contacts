@@ -19,6 +19,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
     $scope.createNewContact = function(newContact) {
         contactService.createContact(newContact).then(function(res) {
             Materialize.toast("Contact Created!", 2500, 'toast-success');
+            $scope.newContact = '';
             $scope.getContacts();
         })
         .catch(function(err){
@@ -28,6 +29,15 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         });
     };
 
+    $scope.setOptionSelected = function (s, searchVal) {
+        for (var i = 0; i < s.options.length; i++) {
+            if (s.options[i].value == searchVal) {
+                s.options[i].selected = true;
+                break;
+            }
+        }
+    };
+
     $scope.updateContact = function(contactDoc) {
         contactService.updateContact(contactDoc).then(function(res) {
             $scope.getContacts();
@@ -35,8 +45,11 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         $('#contactDetails').trigger("reset");
     };
 
+    $scope.deleteContactInit = function(id) {
+        $('#modal5').openModal();
+    };
+
     $scope.deleteContact = function(id) {
-        // add warning
         contactService.deleteContact(id).then(function(res) {
             $scope.getContacts();
         }); 
@@ -49,8 +62,6 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
             var contactTotal = 0;
             for (var i = 0; i < data.length; i++){
                 if (user.data._id === data[i].userId  && user.data._id ){
-                    //phoneNo = data[i].cellPhone;
-                    //data[i].cellPhone = phoneNo.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
                     contactArray.push(data[i]);
                 }
             }
@@ -75,20 +86,17 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         filterOptions: $scope.filterOptions,
         afterSelectionChange: function (row, event) {
             $scope.contact = $scope.selected[0];
-
             if ($scope.contact){
-              $('#modal4').openModal();
+                $('#modal4').openModal();
             };
         },
         height: '200px',
-        sortInfo: {fields: ['Last Name', 'First Name', 'City', 'State', 'Contact Type'], directions: ['asc']},
+        sortInfo: {fields: ['Last Name', 'First Name', 'City', 'State'], directions: ['asc']},
         columnDefs: [
             {field: 'last', displayName: 'Last Name'},
             {field: 'first', displayName: 'First Name'},
             {field: 'city', displayName: 'City'},
             {field: 'state', displayName: 'State'},
-            {field: 'contactType', displayName: 'Contact Type'},
-            {field: 'title', visible: false},
             {field: 'firstAddr', visible: false},
             {field: 'secondAddr', visible: false},
             {field: 'postal', visible: false},

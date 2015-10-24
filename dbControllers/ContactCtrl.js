@@ -6,8 +6,6 @@ module.exports = {
 
   createContact: function(req, res){
     Contact.create({
-      contactType: req.body.contactType,
-      title: req.body.title,
       first: req.body.first,
       last: req.body.last,
       firstAddr: req.body.firstAddr,
@@ -55,8 +53,6 @@ module.exports = {
  
   updateContact: function(req, res){
     Contact.findByIdAndUpdate(req.params.id, {
-      contactType: req.body.contactType,
-      title: req.body.title,
       first: req.body.first,
       last: req.body.last,
       firstAddr: req.body.firstAddr,

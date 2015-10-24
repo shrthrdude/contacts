@@ -7,8 +7,6 @@ app.service('contactService', function($http, $q) {
 	    method: 'POST',
 	    url: '/api/contact/create',
 	    data: {
-	    	contactType: newContact.contactType,
-	    	title: newContact.title,
 	    	first: newContact.first,
 	    	last: newContact.last,
 	    	firstAddr: newContact.firstAddr,

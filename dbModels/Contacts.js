@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 
 var contactsSchema = new mongoose.Schema({
-  contactType: { type: String, required: true },
-  title: { type: String, required: false },
   first: { type: String, required: true },
   last: { type: String, required: true },
   firstAddr: { type: String, required: false },

@@ -43,6 +43,16 @@ hr
 	border-top: 1px solid #ddd;
 }
 
+select {
+	background-color: #3949ab !important;
+	color: #3949ab !important;
+}
+
+select option{
+	background-color: #3949ab !important;
+	color: #3949ab !important;
+}
+
 table
 {
 	background-color: transparent;
@@ -239,10 +249,6 @@ p {
     top: 0;
   }
 }*/
-
-.ilb {
-	display: inline-block;
-}
 
 .icon-block {
   padding: 0 15px;
