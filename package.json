@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "Contact application",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shrthrdude/contacts.git"
   },
   "author": "",
-  "license": "ISC",
   "homepage": "https://github.com/shrtrdude/contacts#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -26,8 +22,6 @@
     "mongoose": "^4.1.0",
     "morgan": "^1.6.1",
     "ng-grid": "^2.0.1",
-    "nodemailer": "^1.4.0",
-    "nodemailer-smtp-transport": "^1.0.3",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0"
   }
