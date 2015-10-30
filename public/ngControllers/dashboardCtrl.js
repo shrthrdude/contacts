@@ -29,10 +29,15 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         });
     };
 
+    $scope.cancelOut = function(){
+        $('.lean-overlay').remove() 
+    }
+
     $scope.updateContact = function(contactDoc) {
         contactService.updateContact(contactDoc).then(function(res) {
             $scope.getContacts();
         }); 
+        $('.lean-overlay').remove()
         $('#contactDetails').trigger("reset");
     };
 
@@ -44,6 +49,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         contactService.deleteContact(id).then(function(res) {
             $scope.getContacts();
         }); 
+        $('.lean-overlay').remove()
         $('#contactDetails').trigger("reset");
     };
 
