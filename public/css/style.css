@@ -311,8 +311,8 @@ p {
 .logosplash {
    display: block;
    margin: 0 auto;
-   height: 300%;
-    width: 300%;
+   height: 100%;
+    width: 100%;
 }
     margin: 10px;
 }
