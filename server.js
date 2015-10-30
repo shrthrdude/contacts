@@ -18,10 +18,10 @@ var localStrategy = require('passport-local').Strategy;
 require('./passport')(passport);
 
 // Controllers
-
 var UserCtrl = require('./dbControllers/UserCtrl');
 var ContactCtrl = require('./dbControllers/ContactCtrl');
 
+// User model
 var User = require('./dbModels/User');
 
 // Express
@@ -110,10 +110,9 @@ app.get('/api/user/auth', function(req, res) {
       });
 }); 
 
-app.put('/api/users/:id', UserCtrl.updateUser)
+app.put('/api/users/:id', UserCtrl.updateUser);
 
 // Contacts endpoints
-
 app.post('/api/contact/create', ContactCtrl.createContact);
 
 app.get('/api/contacts', ContactCtrl.getContacts);

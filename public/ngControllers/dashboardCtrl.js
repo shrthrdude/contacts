@@ -29,15 +29,6 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
         });
     };
 
-    $scope.setOptionSelected = function (s, searchVal) {
-        for (var i = 0; i < s.options.length; i++) {
-            if (s.options[i].value == searchVal) {
-                s.options[i].selected = true;
-                break;
-            }
-        }
-    };
-
     $scope.updateContact = function(contactDoc) {
         contactService.updateContact(contactDoc).then(function(res) {
             $scope.getContacts();
@@ -100,6 +91,7 @@ app.controller("dashboardCtrl", function($scope, user, dashboardService, contact
             {field: 'firstAddr', visible: false},
             {field: 'secondAddr', visible: false},
             {field: 'postal', visible: false},
+            {field: 'country', visible: false},
             {field: 'homePhone', visible: false},
             {field: 'mobilePhone', visible: false},
             {field: 'workPhone', visible: false},
